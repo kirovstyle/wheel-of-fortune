@@ -63,4 +63,28 @@ function spinWheel() {
             requestAnimationFrame(spin);
         }
     });
+
+}
+
+const botToken = '8310551169:AAG46xXtCAbXT2Anx9Io8Q1F2oQJFRdYCX4'; 
+
+function handleTelegramRequest(query) {
+    const results = [
+        {
+            type: 'article',
+            id: 'unique-id-for-wheel',
+            title: 'Колесо Фортуны!',
+            input_message_content: {
+                message_text: `<a href='https://yourusername.github.io/wheel-of-fortune/'>Запустите Колесо Фортуны</a>`,
+                parse_mode: 'HTML'
+            },
+            thumb_url: 'https://yourusername.github.io/wheel-of-fortune/images/icon.png' // Ваш икон-каартинка
+        }
+    ];
+
+    fetch(`https://api.telegram.org/bot${botToken}/answerInlineQuery`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ inline_query_id: query.id, results })
+    });
 }
