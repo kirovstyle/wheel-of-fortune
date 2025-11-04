@@ -75,7 +75,7 @@ function handleTelegramRequest(query) {
             id: 'unique-id-for-wheel',
             title: 'Колесо Фортуны!',
             input_message_content: {
-                message_text: `<a href='https://yourusername.github.io/wheel-of-fortune/'>Запустите Колесо Фортуны</a>`,
+                message_text: `<a href='https://kirovstyle.github.io/wheel-of-fortune/'>Запустите Колесо Фортуны</a>`,
                 parse_mode: 'HTML'
             }
         }
@@ -87,4 +87,5 @@ function handleTelegramRequest(query) {
         body: JSON.stringify({ inline_query_id: query.id, results })
     });
 }
+
 
