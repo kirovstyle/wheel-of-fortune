@@ -77,8 +77,7 @@ function handleTelegramRequest(query) {
             input_message_content: {
                 message_text: `<a href='https://yourusername.github.io/wheel-of-fortune/'>Запустите Колесо Фортуны</a>`,
                 parse_mode: 'HTML'
-            },
-            thumb_url: 'https://yourusername.github.io/wheel-of-fortune/images/icon.png' // Ваш икон-каартинка
+            }
         }
     ];
 
@@ -88,3 +87,4 @@ function handleTelegramRequest(query) {
         body: JSON.stringify({ inline_query_id: query.id, results })
     });
 }
+
